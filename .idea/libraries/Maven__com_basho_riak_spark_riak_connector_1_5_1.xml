@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.basho.riak:spark-riak-connector:1.5.1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/basho/riak/spark-riak-connector/1.5.1/spark-riak-connector-1.5.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/basho/riak/spark-riak-connector/1.5.1/spark-riak-connector-1.5.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/basho/riak/spark-riak-connector/1.5.1/spark-riak-connector-1.5.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,18 @@
+language: java
+os: linux
+env:
+  global:
+    - RIAK_HOST=localhost
+sudo: required
+jdk:
+  - oraclejdk8
+
+services:
+## travis 自带riak支持
+  - riak
+
+script: mvn clean install cobertura:cobertura
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+  

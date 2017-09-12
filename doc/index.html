@@ -1,0 +1,172 @@
+<section class="md_block_wrapper" id="md_block_outer_0"
+         style="color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+    <h1 id="toc_0"
+        style="color: rgb(16, 163, 238); font-size: 1.7em; text-align: left; margin: 0.8em 0px 0.6em; padding: 0px; line-height: 1.6em; font-weight: normal;">
+        mumu-riak riak非关系缓存数据库</h1></section><a name="md_block_0" id="md_block_0" class="md_block_a"
+                                                style="color: rgb(64, 131, 196); text-decoration: none; font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);"></a>
+<span style="color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;"></span>
+<p class="md_block"
+   style="word-wrap: break-word; overflow: hidden; margin: 1.5em 0px; color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+    <span class="md_line md_line_dom_embed" style="margin-bottom: 0.5em; display: block; line-height: 1.8186625;"><a
+            class="md_compiled" href="https://github.com/mumucache/mumu-riak/blob/master/LICENSE"
+            style="color: rgb(64, 131, 196); text-decoration: none;"><img class=""
+                                                                          src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"
+                                                                          alt="License" title=""
+                                                                          style="max-width: 98%; margin: 0px auto; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;"></a><a
+            class="md_compiled" href="https://github.com/mumucache/mumu-riak"
+            style="color: rgb(64, 131, 196); text-decoration: none;"><img class=""
+                                                                          src="https://img.shields.io/maven-central/v/com.weibo/motan.svg?label=Maven%20Central"
+                                                                          alt="Maven Central" title=""
+                                                                          style="max-width: 98%; margin: 0px auto; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;"></a><a
+            class="md_compiled" href="https://travis-ci.org/mumucache/mumu-riak"
+            style="color: rgb(64, 131, 196); text-decoration: none;"><img class=""
+                                                                          src="https://travis-ci.org/mumucache/mumu-riak.svg?branch=master"
+                                                                          alt="Build Status" title=""
+                                                                          style="max-width: 98%; margin: 0px auto; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;"></a><a
+            class="md_compiled" href="https://codecov.io/gh/mumucache/mumu-riak"
+            style="color: rgb(64, 131, 196); text-decoration: none;"><img class=""
+                                                                          src="https://codecov.io/gh/mumucache/mumu-riak/branch/master/graph/badge.svg"
+                                                                          alt="codecov" title=""
+                                                                          style="max-width: 98%; margin: 0px auto; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;"></a><a
+            class="md_compiled" href="http://opentracing.io/"
+            style="color: rgb(64, 131, 196); text-decoration: none;"><img class=""
+                                                                          src="https://img.shields.io/badge/OpenTracing--1.0-enabled-blue.svg"
+                                                                          alt="OpenTracing-1.0 Badge" title=""
+                                                                          style="max-width: 98%; margin: 0px auto; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;"></a></span>
+</p>
+<section class="md_block_wrapper" id="md_block_outer_3"
+         style="color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+    <h2 id="toc_1"
+        style="color: rgb(16, 163, 238); font-weight: normal; line-height: 1.5em; margin-top: 1.5em; margin-bottom: 0.8em; font-size: 1.45em;">
+        riak 简介</h2></section><a name="md_block_3" id="md_block_3" class="md_block_a"
+                                 style="color: rgb(64, 131, 196); text-decoration: none; font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);"></a>
+<span style="color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;"></span>
+<p class="md_block"
+   style="word-wrap: break-word; overflow: hidden; margin: 1.5em 0px; color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+    <span class="md_line" style="margin-bottom: 0.5em; display: block; line-height: 1.8186625;"><span
+            id="md_block_inner_4"><strong style="color: rgb(0, 0, 0); font-weight: bold;"><em>Riak 是 Amazon 的高可用性键值存储库，用Erlang编写且基于Dynamo，是一种高度可扩展的分布式数据存储。</em></strong></span><a
+            name="md_block_4" id="md_block_4" class="md_block_a"
+            style="color: rgb(64, 131, 196); text-decoration: none;"></a></span></p>
+<section class="md_block_wrapper" id="md_block_outer_5"
+         style="color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+    <h2 id="toc_2"
+        style="color: rgb(16, 163, 238); font-weight: normal; line-height: 1.5em; margin-top: 1.5em; margin-bottom: 0.8em; font-size: 1.45em;">
+        riak KV缓存系统</h2></section><a name="md_block_5" id="md_block_5" class="md_block_a"
+                                     style="color: rgb(64, 131, 196); text-decoration: none; font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);"></a>
+<span style="color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;"></span>
+<p class="md_block"
+   style="word-wrap: break-word; overflow: hidden; margin: 1.5em 0px; color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+    <span class="md_line" style="margin-bottom: 0.5em; display: block; line-height: 1.8186625;"><span
+            id="md_block_inner_6">Riak KV is a distributed NoSQL database designed to deliver maximum data availability by distributing data across multiple servers. As long as your Riak KV client can reach one Riak server, it should be able to write data.</span><a
+            name="md_block_6" id="md_block_6" class="md_block_a"
+            style="color: rgb(64, 131, 196); text-decoration: none;"></a></span></p>
+<section class="md_block_wrapper" id="md_block_outer_7"
+         style="color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+    <h2 id="toc_3"
+        style="color: rgb(16, 163, 238); font-weight: normal; line-height: 1.5em; margin-top: 1.5em; margin-bottom: 0.8em; font-size: 1.45em;">
+        riak TS</h2></section><a name="md_block_7" id="md_block_7" class="md_block_a"
+                                 style="color: rgb(64, 131, 196); text-decoration: none; font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);"></a>
+<span style="color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;"></span>
+<p class="md_block"
+   style="word-wrap: break-word; overflow: hidden; margin: 1.5em 0px; color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+    <span class="md_line" style="margin-bottom: 0.5em; display: block; line-height: 1.8186625;"><span
+            id="md_block_inner_8">Riak TS is a distributed NoSQL key/value store optimized for time series data. With TS, you can associate a number of data points with a specific point in time. TS uses discrete slices of time to co-locate data. For example, humidity and temperature readings from a meter reported during the same slice of time will be stored together on disk.</span><a
+            name="md_block_8" id="md_block_8" class="md_block_a"
+            style="color: rgb(64, 131, 196); text-decoration: none;"></a></span></p><p class="md_block"
+                                                                                       style="word-wrap: break-word; overflow: hidden; margin: 1.5em 0px; color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+    <span class="md_line" style="margin-bottom: 0.5em; display: block; line-height: 1.8186625;"><span
+            id="md_block_inner_10">Riak TS uses tables defined according to a schema for each coherent group of data. This allows for both flexibility, in terms of collecting many different sets of data, and enough structure to make the experience of working with the collected data better.</span><a
+            name="md_block_10" id="md_block_10" class="md_block_a"
+            style="color: rgb(64, 131, 196); text-decoration: none;"></a></span></p>
+<section class="md_block_wrapper" id="md_block_outer_11"
+         style="color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+    <h2 id="toc_4"
+        style="color: rgb(16, 163, 238); font-weight: normal; line-height: 1.5em; margin-top: 1.5em; margin-bottom: 0.8em; font-size: 1.45em;">
+        riak CS</h2></section><a name="md_block_11" id="md_block_11" class="md_block_a"
+                                 style="color: rgb(64, 131, 196); text-decoration: none; font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);"></a>
+<span style="color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;"></span>
+<p class="md_block"
+   style="word-wrap: break-word; overflow: hidden; margin: 1.5em 0px; color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+    <span class="md_line" style="margin-bottom: 0.5em; display: block; line-height: 1.8186625;"><span
+            id="md_block_inner_12">Riak CS (Cloud Storage) is easy-to-use object storage software built on top of Riak KV, Basho’s distributed database. Riak CS is designed to provide simple, available, distributed cloud storage at any scale, and can be used to build cloud architectures—be they public or private—or as storage infrastructure for heavy-duty applications and services. Riak CS’s API is Amazon S3 compatible and supports per-tenant reporting for use cases involving billing and metering.</span><a
+            name="md_block_12" id="md_block_12" class="md_block_a"
+            style="color: rgb(64, 131, 196); text-decoration: none;"></a></span></p>
+<section class="md_block_wrapper" id="md_block_outer_14"
+         style="color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+    <h2 id="toc_5"
+        style="color: rgb(16, 163, 238); font-weight: normal; line-height: 1.5em; margin-top: 1.5em; margin-bottom: 0.8em; font-size: 1.45em;">
+        riak安装</h2></section><a name="md_block_14" id="md_block_14" class="md_block_a"
+                                style="color: rgb(64, 131, 196); text-decoration: none; font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);"></a>
+<span style="color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;"></span>
+<p class="md_block"
+   style="word-wrap: break-word; overflow: hidden; margin: 1.5em 0px; color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+    <span class="md_line" style="margin-bottom: 0.5em; display: block; line-height: 1.8186625;"><span
+            id="md_block_inner_15">真心没有见过比riak还难安装的软件了，找了N中办法，都没有安装成功，总是报错。终于今天使用rpm安装成功。</span><a name="md_block_15"
+                                                                                                   id="md_block_15"
+                                                                                                   class="md_block_a"
+                                                                                                   style="color: rgb(64, 131, 196); text-decoration: none;"></a></span>
+</p>
+<pre style="margin: 1.2em 0px; border: 1px solid rgb(230, 230, 230); padding: 15px 10px; display: block; overflow: auto; background-color: rgb(247, 247, 247); font-size: 13px; color: rgb(60, 60, 60); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-position: initial initial; background-repeat: initial initial;"><code
+        style="background-image: none; padding: 0px; margin: 0px; border: none; background-position: initial initial; background-repeat: initial initial;">curl -s https://packagecloud.io/install/repositories/basho/riak/script.rpm.sh | sudo bash<br>sudo yum install riak-2.2.3-1.el7.centos.x86_64</code></pre>
+<p class="md_block"
+   style="word-wrap: break-word; overflow: hidden; margin: 1.5em 0px; color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+    <span class="md_line" style="margin-bottom: 0.5em; display: block; line-height: 1.8186625;"><span
+            id="md_block_inner_20"><strong style="color: rgb(0, 0, 0); font-weight: bold;">安装完成后 需要修改配置文件:/etc/riak/riak.conf</strong></span><a
+            name="md_block_20" id="md_block_20" class="md_block_a"
+            style="color: rgb(64, 131, 196); text-decoration: none;"></a></span></p>
+<pre style="margin: 1.2em 0px; border: 1px solid rgb(230, 230, 230); padding: 15px 10px; display: block; overflow: auto; background-color: rgb(247, 247, 247); font-size: 13px; color: rgb(60, 60, 60); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-position: initial initial; background-repeat: initial initial;"><code
+        style="background-image: none; padding: 0px; margin: 0px; border: none; background-position: initial initial; background-repeat: initial initial;">listener.http.internal = 192.168.11.25:8098  <br>listener.protobuf.internal = 192.168.11.25:8087</code></pre>
+<p class="md_block"
+   style="word-wrap: break-word; overflow: hidden; margin: 1.5em 0px; color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+    <span class="md_line md_line_dom_embed" style="margin-bottom: 0.5em; display: block; line-height: 1.8186625;"><a
+            class="md_compiled"
+            href="https://packagecloud.io/basho/riak/packages/el/7/riak-2.2.3-1.el7.centos.x86_64.rpm"
+            style="color: rgb(64, 131, 196); text-decoration: none;">https://packagecloud.io/basho/riak/packages/el/7/riak-2.2.3-1.el7.centos.x86_64.rpm</a></span>
+</p>
+<section class="md_block_wrapper" id="md_block_outer_27"
+         style="color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+    <h2 id="toc_6"
+        style="color: rgb(16, 163, 238); font-weight: normal; line-height: 1.5em; margin-top: 1.5em; margin-bottom: 0.8em; font-size: 1.45em;">
+        测试</h2></section><a name="md_block_27" id="md_block_27" class="md_block_a"
+                            style="color: rgb(64, 131, 196); text-decoration: none; font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);"></a>
+<span style="color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;"></span>
+<section class="md_block_wrapper" id="md_block_outer_30"
+         style="color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+    <h2 id="toc_7"
+        style="color: rgb(16, 163, 238); font-weight: normal; line-height: 1.5em; margin-top: 1.5em; margin-bottom: 0.8em; font-size: 1.45em;">
+        相关阅读</h2></section><a name="md_block_30" id="md_block_30" class="md_block_a"
+                              style="color: rgb(64, 131, 196); text-decoration: none; font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);"></a>
+<span style="color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;"></span>
+<p class="md_block"
+   style="word-wrap: break-word; overflow: hidden; margin: 1.5em 0px; color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+    <span class="md_line md_line_dom_embed" style="margin-bottom: 0.5em; display: block; line-height: 1.8186625;"><a
+            class="md_compiled" href="https://github.com/basho/riak"
+            style="color: rgb(64, 131, 196); text-decoration: none;">riak源码</a></span><span
+        class="md_line md_line_dom_embed" style="margin-bottom: 0.5em; display: block; line-height: 1.8186625;"><a
+        class="md_compiled" href="https://github.com/basho/riak-java-client"
+        style="color: rgb(64, 131, 196); text-decoration: none;">riak-java-client源码</a></span><span class="md_line"
+                                                                                                    style="margin-bottom: 0.5em; display: block; line-height: 1.8186625;"><a
+        class="md_compiled" href="https://www.tiot.jp/riak-docs/"
+        style="color: rgb(64, 131, 196); text-decoration: none;">riak docs文档</a></span></p>
+<section class="md_block_wrapper" id="md_block_outer_35"
+         style="color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+    <h2 id="toc_8"
+        style="color: rgb(16, 163, 238); font-weight: normal; line-height: 1.5em; margin-top: 1.5em; margin-bottom: 0.8em; font-size: 1.45em;">
+        联系方式</h2></section><a name="md_block_35" id="md_block_35" class="md_block_a"
+                              style="color: rgb(64, 131, 196); text-decoration: none; font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);"></a>
+<span style="color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;"></span>
+<p class="md_block"
+   style="word-wrap: break-word; overflow: hidden; margin: 1.5em 0px; color: rgb(60, 60, 60); font-family:sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 29px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+    <span class="md_line" style="margin-bottom: 0.5em; display: block; line-height: 1.8186625;"><span
+            id="md_block_inner_36"><strong style="color: rgb(0, 0, 0); font-weight: bold;">以上观点纯属个人看法，如有不同，欢迎指正。<span
+            class="Apple-converted-space"> </span></strong></span><strong
+            style="color: rgb(0, 0, 0); font-weight: bold;"><a name="md_block_36" id="md_block_36" class="md_block_a"
+                                                               style="color: rgb(64, 131, 196); text-decoration: none;"></a></strong></span><strong
+        style="color: rgb(0, 0, 0); font-weight: bold;"><span class="md_line"
+                                                              style="margin-bottom: 0.5em; display: block; line-height: 1.8186625;">email:<a
+        href="mailto:babymm@aliyun.com"
+        style="color: rgb(64, 131, 196); text-decoration: none;">babymm@aliyun.com</a></span><span class="md_line"
+                                                                                                   style="margin-bottom: 0.5em; display: block; line-height: 1.8186625;"><span
+        id="md_block_inner_38">github:<a class="md_compiled" href="https://github.com/babymm"
+                                         style="color: rgb(64, 131, 196); text-decoration: none;">https://github.com/babymm</a></span></span></strong>
+</p>
