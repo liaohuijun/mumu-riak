@@ -6,7 +6,7 @@
 [![OpenTracing-1.0 Badge](https://img.shields.io/badge/OpenTracing--1.0-enabled-blue.svg)](http://opentracing.io)
 
 ## riak 简介
-***Riak 是 Amazon 的高可用性键值存储库，用Erlang编写且基于Dynamo，是一种高度可扩展的分布式数据存储。***
+***Riak是以 Erlang 编写的一个高度可扩展的分布式数据存储，Riak的实现是基于Amazon的Dynamo论文，Riak的设计目标之一就是高可用。Riak支持多节点构建的系统，每次读写请求不需要集群内所有节点参与也能胜任。提供一个灵活的 map/reduce 引擎，一个友好的 HTTP/JSON 查询接口。Riak 非常易于部署和扩展。可以无缝地向群集添加额外的节点。link walking 之类的特性以及对 Map/Reduce 的支持允许实现更加复杂的查询。除了 HTTP API 外，Riak 还提供了一个原生 Erlang API 以及对 Protocol Buffer 的支持。***
 ## riak KV缓存系统
 Riak KV is a distributed NoSQL database designed to deliver maximum data availability by distributing data across multiple servers. As long as your Riak KV client can reach one Riak server, it should be able to write data.
 ## riak TS
@@ -27,6 +27,7 @@ sudo yum install riak-2.2.3-1.el7.centos.x86_64
 listener.http.internal = 192.168.11.25:8098  
 listener.protobuf.internal = 192.168.11.25:8087
 ```
+**以上为centos7安装步骤，如果其他系统，请点击下面的链接**  
 [https://packagecloud.io/basho/riak/packages/el/7/riak-2.2.3-1.el7.centos.x86_64.rpm](https://packagecloud.io/basho/riak/packages/el/7/riak-2.2.3-1.el7.centos.x86_64.rpm)
 
 ## 测试

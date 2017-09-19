@@ -60,10 +60,10 @@ public class RiakBenchmarkTest {
         }
         Options Options= new OptionsBuilder().
                 include(RiakBenchmarkTest.class.getSimpleName()+".set$").
-                measurementIterations(100).
-                warmupIterations(100).
+                measurementIterations(10).
+                warmupIterations(10).
                 forks(1).
-                threads(10).
+                threads(1).
                 build();
         new Runner(Options).run();
         System.out.println("jmh after:");
@@ -77,10 +77,10 @@ public class RiakBenchmarkTest {
     public void testGet() throws RunnerException {
         Options Options= new OptionsBuilder().
                 include(RiakBenchmarkTest.class.getSimpleName()+".get").
-                measurementIterations(100).
-                warmupIterations(100).
+                measurementIterations(10).
+                warmupIterations(10).
                 forks(1).
-                threads(10).
+                threads(1).
                 build();
         new Runner(Options).run();
     }
